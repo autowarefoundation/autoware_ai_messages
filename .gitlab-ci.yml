@@ -4,7 +4,7 @@ stages:
   
 variables:
   ROS_CI_DESKTOP: "`lsb_release -cs`"
-  GIT_CLONE_PATH: $CI_BUILDS_DIR/autoware.ai/src
+  GIT_CLONE_PATH: $CI_BUILDS_DIR/autoware.ai/src/$CI_PROJECT_NAME
   CI_SOURCE_PATH: $CI_PROJECT_DIR
   ROSINSTALL_FILE: $CI_SOURCE_PATH/dependencies.rosinstall
   CATKIN_OPTIONS: $CI_SOURCE_PATH/catkin.options
@@ -14,7 +14,7 @@ variables:
 .build: &build_common
   before_script:
     - pwd
-    - ls
+    - echo $CI_SOURCE_PATH
     - apt-get update && apt-get upgrade -y
     - apt-get install -y libarmadillo-dev libglew-dev libssh2-1-dev python-flask python-requests
     - apt-get install -y python3-pip python3-setuptools

@@ -18,7 +18,8 @@ variables:
     # Update setuptools from PyPI because the version Ubuntu ships with is too old
     - pip3 install -U setuptools
     - rosdep update
-    - sed -i "s/\$ROS_DISTRO/$ROS_DISTRO/g" "docker/generic/dependencies" && cat docker/generic/dependencies | xargs apt-get install -y    
+    - wget https://raw.githubusercontent.com/sgermanserrano/Autoware/master/docker/generic/dependencies
+    - sed -i "s/\$ROS_DISTRO/$ROS_DISTRO/g" dependencies" && cat dependencies | xargs apt-get install -y    
 
 build_kinetic:
   stage: build
@@ -40,7 +41,9 @@ build_kinetic:
     - cd $CI_PROJECT_DIR/..
     - git clone https://github.com/sgermanserrano/utilities.git
     - rm -r utilities/tablet_socket_msgs
+    - ls
     - cd ..
+    - ls
     - pwd
   # We first build the entire workspace normally
     - colcon build --cmake-args -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_C_FLAGS="${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_BUILD_TYPE=Debug

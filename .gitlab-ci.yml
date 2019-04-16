@@ -62,7 +62,6 @@ build_kinetic:
     - COVERAGE_FOLDER_NAME="coverage_$BRANCH_NAME"
     - genhtml -p "$PWD" --legend --demangle-cpp lcov.total.filtered -o $COVERAGE_FOLDER_NAME
     - tar -czvf coverage.tar.gz $COVERAGE_FOLDER_NAME 
-  retry: 0
   artifacts:
     paths:
       - $CI_PROJECT_DIR/coverage.tar.gz
@@ -106,7 +105,6 @@ build_cross:
                     -DCMAKE_FIND_ROOT_PATH=${AUTOWARE_INSTALL_PATH}
                   "
                   '
-  retry: 0
 
 pages:
   stage: deploy

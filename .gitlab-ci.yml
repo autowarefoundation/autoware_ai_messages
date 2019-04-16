@@ -36,6 +36,9 @@ build_kinetic:
     - make install 
     - cd ..
     - rm -r lcov
+  # Clone utilities repo
+    - git clone https://github.com/sgermanserrano/utilities.git
+    - ls
   # We first build the entire workspace normally
     - colcon build --cmake-args -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_C_FLAGS="${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_BUILD_TYPE=Debug
   # And then build the tests target. catkin (ROS1) packages add their tests to the tests target

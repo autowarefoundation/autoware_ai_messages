@@ -19,7 +19,7 @@ variables:
     - pip3 install -U setuptools
     - rosdep update
     - wget https://raw.githubusercontent.com/sgermanserrano/Autoware/master/docker/generic/dependencies
-    - sed -i "s/\$ROS_DISTRO/$ROS_DISTRO/g" dependencies" && cat dependencies | xargs apt-get install -y    
+    - sed -i "s/\$ROS_DISTRO/$ROS_DISTRO/g" "dependencies" && cat dependencies | xargs apt-get install -y    
 
 build_kinetic:
   stage: build

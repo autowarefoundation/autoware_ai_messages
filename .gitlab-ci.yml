@@ -38,6 +38,7 @@ build_kinetic:
     - rm -r lcov
   # Clone utilities repository
     - git clone https://github.com/sgermanserrano/utilities.git
+    - rm -r utilities/tablet_socket_msgs
     - ls
   # We first build the entire workspace normally
     - colcon build --cmake-args -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_C_FLAGS="${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_BUILD_TYPE=Debug

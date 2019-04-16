@@ -13,7 +13,7 @@ variables:
 .build: &build_common
   before_script:
     - apt-get update && apt-get upgrade -y
-    - apt-get install -y libarmadillo-dev libglew-dev libssh2-1-dev python-flask python-requests
+    - apt-get install -y libarmadillo-dev libglew-dev libssh2-1-dev python-flask python-requests wget
     - apt-get install -y python3-pip python3-setuptools
     # Update setuptools from PyPI because the version Ubuntu ships with is too old
     - pip3 install -U setuptools

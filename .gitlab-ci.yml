@@ -4,7 +4,7 @@ stages:
   
 variables:
   ROS_CI_DESKTOP: "`lsb_release -cs`"
-  CI_PROJECT_DIR: /ws/src
+  #CI_PROJECT_DIR: /ws/src
   CI_SOURCE_PATH: $CI_PROJECT_DIR
   ROSINSTALL_FILE: $CI_SOURCE_PATH/dependencies.rosinstall
   CATKIN_OPTIONS: $CI_SOURCE_PATH/catkin.options

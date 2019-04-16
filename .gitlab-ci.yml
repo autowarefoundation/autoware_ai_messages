@@ -36,7 +36,7 @@ build_kinetic:
     - make install 
     - cd ..
     - rm -r lcov
-  # Clone utilities repo
+  # Clone utilities repository
     - git clone https://github.com/sgermanserrano/utilities.git
     - ls
   # We first build the entire workspace normally

@@ -30,35 +30,14 @@ build_kinetic:
   script:
   # colcon as a Debian package is only available in Kinetic and up
     - apt-get install -y python3-colcon-common-extensions
-  # Install lcov from source as binary installation errors when appending files
-    - git clone https://github.com/linux-test-project/lcov.git
-    - cd lcov
-    - git checkout v1.13
-    - make install 
-    - cd ..
-    - rm -r lcov
   # We first build the entire workspace normally
     - colcon build --cmake-args -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_C_FLAGS="${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_BUILD_TYPE=Debug
   # And then build the tests target. catkin (ROS1) packages add their tests to the tests target
   # which is not the standard target for CMake projects. We need to trigger the tests target so that
   # tests are built and any fixtures are set up.
     - colcon build --cmake-target tests --cmake-args -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_C_FLAGS="${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage" -DCMAKE_BUILD_TYPE=Debug
-    - lcov --initial --directory build --capture --output-file lcov.base
     - colcon test
     - colcon test-result
-    - lcov --directory build --capture --output-file lcov.test
-    - lcov -a lcov.base -a lcov.test -o lcov.total
-    - lcov -r lcov.total '*/tests/*' '*/test/*' '*/build/*' '*/devel/*' '*/install/*' '*/log/*' '/usr/*' '/opt/*' '/tmp/*' '*/CMakeCCompilerId.c' '*/CMakeCXXCompilerId.cpp' -o lcov.total.filtered
-    # BRANCH_NAME: gets branch name from CI_COMMIT_REF_NAME variable substituting / with _ (feature/test_this_lib becomes feature_test_this_lib)
-    # CI_COMMIT_REF_NAME: (from https://docs.gitlab.com/ee/ci/variables/) The branch or tag name for which project is built
-    - BRANCH_NAME="$(echo $CI_COMMIT_REF_NAME | sed 's/\//_/g')"
-    - COVERAGE_FOLDER_NAME="coverage_$BRANCH_NAME"
-    - genhtml -p "$PWD" --legend --demangle-cpp lcov.total.filtered -o $COVERAGE_FOLDER_NAME
-    - tar -czvf coverage.tar.gz $COVERAGE_FOLDER_NAME 
-  artifacts:
-    paths:
-      - $CI_PROJECT_DIR/coverage.tar.gz
-    expire_in: 48 hrs
   coverage: /\s*lines.*:\s(\d+\.\d+\%\s\(\d+\sof\s\d+.*\))/
     
 build_cross:
@@ -98,19 +77,3 @@ build_cross:
                     -DCMAKE_FIND_ROOT_PATH=${AUTOWARE_INSTALL_PATH}
                   "
                   '
-
-pages:
-  stage: deploy
-  image: alpine
-  dependencies:
-    - build_kinetic
-  script:
-    - BRANCH_NAME="$(echo $CI_COMMIT_REF_NAME | sed 's/\//_/g')"
-    - COVERAGE_FOLDER_NAME="coverage_$BRANCH_NAME"
-    - tar -xzvf coverage.tar.gz
-    - mv $COVERAGE_FOLDER_NAME public
-  artifacts:
-    paths:
-      - public
-  only:
-    - master

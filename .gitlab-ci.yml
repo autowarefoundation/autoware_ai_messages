@@ -6,8 +6,7 @@ variables:
   before_script:
     - mkdir -p src_tmp/${CI_PROJECT_NAME} && mv `find -maxdepth 1 -not -name . -not -name src_tmp` src_tmp/${CI_PROJECT_NAME} && mv src_tmp/ src/
     - apt-get update
-    - apt-get install -y libarmadillo-dev libglew-dev libssh2-1-dev python-flask python-requests wget
-    - apt-get install -y python3-pip python3-setuptools python3-colcon-common-extensions
+    - apt-get install -y wget python3-pip python3-setuptools python3-colcon-common-extensions
     # Update setuptools from PyPI because the version Ubuntu ships with is too old
     - pip3 install -U setuptools
     - rosdep update

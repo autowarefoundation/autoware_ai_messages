@@ -9,11 +9,11 @@ int32 MODE_AUTO=1
 
 int32 gearshift
 
-float64 speed
+float64 speed # vehicle velocity [km/s]
 int32 drivepedal
 int32 brakepedal
 
-float64 angle
+float64 angle # vehicle steering (tire) angle [rad]
 
 # Body
 int32 lamp

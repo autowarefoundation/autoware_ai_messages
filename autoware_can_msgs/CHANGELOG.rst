@@ -2,6 +2,9 @@
 Changelog for package autoware_can_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.0 (2019-07-12)
+-------------------
+
 1.11.0 (2019-03-21)
 -------------------
 * Fix license notice in corresponding package.xml

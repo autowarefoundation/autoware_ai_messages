@@ -2,8 +2,10 @@
 Changelog for package autoware_map_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.12.0 (2019-07-12)
+-------------------
+* Adding CHANGELOG for autoware_external_msgs and autoware_map_msgs.
+* Updating autoware_map_msgs version for ROS release.
 * Merge branch 'fix/remove_unnecessary_depend' into 'master'
   Removing unused depend in autoware_map_msgs.
   See merge request autowarefoundation/autoware.ai/messages!4

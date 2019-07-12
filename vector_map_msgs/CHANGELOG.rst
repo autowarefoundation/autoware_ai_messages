@@ -2,6 +2,9 @@
 Changelog for package vector_map_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.0 (2019-07-12)
+-------------------
+
 1.11.0 (2019-03-21)
 -------------------
 * Fix license notice in corresponding package.xml

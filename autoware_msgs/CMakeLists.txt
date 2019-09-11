@@ -71,6 +71,10 @@ add_message_files(
             RemoteCmd.msg
 )
 
+add_service_files(
+  FILES RecognizeLightState.srv
+)
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
         DEPENDENCIES

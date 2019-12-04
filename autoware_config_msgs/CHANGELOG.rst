@@ -2,8 +2,8 @@
 Changelog for package autoware_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.13.0 (2019-12-03)
+-------------------
 * Lateral limitation filter by twist_filter
 * add param of decision_maker: disable insert stopline
 * Add Message Properties for use_sim and use_decision_maker

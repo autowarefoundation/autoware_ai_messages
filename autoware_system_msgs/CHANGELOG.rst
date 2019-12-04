@@ -2,8 +2,8 @@
 Changelog for package autoware_system_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.13.0 (2019-12-03)
+-------------------
 * Update emergency category in DiagnosticStatus message
 * Update package.xml files to Format 2.
 * Contributors: Joshua Whitley, Yuma Nihei

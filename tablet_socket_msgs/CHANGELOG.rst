@@ -2,8 +2,8 @@
 Changelog for package tablet_socket_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.13.0 (2019-12-03)
+-------------------
 * Update package.xml files to Format 2.
 * Contributors: Joshua Whitley
 

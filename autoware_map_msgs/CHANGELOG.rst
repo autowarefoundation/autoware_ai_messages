@@ -2,6 +2,11 @@
 Changelog for package autoware_map_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update package.xml files to Format 2.
+* Contributors: Joshua Whitley
+
 1.12.0 (2019-07-12)
 -------------------
 * Adding CHANGELOG for autoware_external_msgs and autoware_map_msgs.

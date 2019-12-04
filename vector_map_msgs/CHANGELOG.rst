@@ -2,6 +2,11 @@
 Changelog for package vector_map_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update package.xml files to Format 2.
+* Contributors: Joshua Whitley
+
 1.12.0 (2019-07-12)
 -------------------
 

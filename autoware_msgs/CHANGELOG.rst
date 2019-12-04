@@ -2,6 +2,12 @@
 Changelog for package autoware_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adding service message for TF-based TLR
+* Update package.xml files to Format 2.
+* Contributors: Joshua Whitley
+
 1.12.0 (2019-07-12)
 -------------------
 

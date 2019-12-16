@@ -2,93 +2,86 @@ cmake_minimum_required(VERSION 2.8.3)
 project(autoware_msgs)
 
 find_package(catkin REQUIRED COMPONENTS
-        message_generation
-        std_msgs
-        geometry_msgs
-        sensor_msgs
-        jsk_recognition_msgs
-        )
+  geometry_msgs
+  jsk_recognition_msgs
+  message_generation
+  sensor_msgs
+  std_msgs
+)
 
-
-## Generate messages in the 'msg' folder
 add_message_files(
-        DIRECTORY msg
-        FILES
-            ControlCommandStamped.msg
-            CloudCluster.msg
-            CloudClusterArray.msg
-            ColorSet.msg
-            ControlCommand.msg
-            DetectedObject.msg
-            DetectedObjectArray.msg
-            ExtractedPosition.msg
-            ImageLaneObjects.msg
-            ImageObjects.msg
-            LaneArray.msg
-            PointsImage.msg
-            ScanImage.msg
-            Signals.msg
-            TunedResult.msg
-            ValueSet.msg
-            Centroids.msg
-            DTLane.msg
-            GeometricRectangle.msg
-            ICPStat.msg
-            ImageObj.msg
-            ImageObjRanged.msg
-            ImageObjTracked.msg
-            ImageRect.msg
-            ImageRectRanged.msg
-            Lane.msg
-            NDTStat.msg
-            ObjLabel.msg
-            ObjPose.msg
-            ProjectionMatrix.msg
-            VscanTracked.msg
-            VscanTrackedArray.msg
-            Waypoint.msg
-            WaypointState.msg
-            VehicleCmd.msg
-            VehicleLocation.msg
-            VehicleStatus.msg
-            TrafficLightResult.msg
-            TrafficLightResultArray.msg
-
-            AccelCmd.msg
-            AdjustXY.msg
-            BrakeCmd.msg
-            IndicatorCmd.msg
-            LampCmd.msg
-            SteerCmd.msg
-            TrafficLight.msg
-            StateCmd.msg
-            State.msg
-            ## Sync
-            SyncTimeMonitor.msg
-            SyncTimeDiff.msg
-
-            ## Remote Control
-            RemoteCmd.msg
+  DIRECTORY msg
+  FILES
+    AccelCmd.msg
+    AdjustXY.msg
+    BrakeCmd.msg
+    Centroids.msg
+    CloudCluster.msg
+    CloudClusterArray.msg
+    ColorSet.msg
+    ControlCommand.msg
+    ControlCommandStamped.msg
+    DTLane.msg
+    DetectedObject.msg
+    DetectedObjectArray.msg
+    ExtractedPosition.msg
+    GeometricRectangle.msg
+    ICPStat.msg
+    ImageLaneObjects.msg
+    ImageObj.msg
+    ImageObjRanged.msg
+    ImageObjTracked.msg
+    ImageObjects.msg
+    ImageRect.msg
+    ImageRectRanged.msg
+    IndicatorCmd.msg
+    LampCmd.msg
+    Lane.msg
+    LaneArray.msg
+    NDTStat.msg
+    ObjLabel.msg
+    ObjPose.msg
+    PointsImage.msg
+    ProjectionMatrix.msg
+    RemoteCmd.msg
+    ScanImage.msg
+    Signals.msg
+    State.msg
+    StateCmd.msg
+    SteerCmd.msg
+    SyncTimeDiff.msg
+    SyncTimeMonitor.msg
+    TrafficLight.msg
+    TrafficLightResult.msg
+    TrafficLightResultArray.msg
+    TunedResult.msg
+    ValueSet.msg
+    VehicleCmd.msg
+    VehicleLocation.msg
+    VehicleStatus.msg
+    VscanTracked.msg
+    VscanTrackedArray.msg
+    Waypoint.msg
+    WaypointState.msg
 )
 
 add_service_files(
   FILES RecognizeLightState.srv
 )
 
-## Generate added messages and services with any dependencies listed here
 generate_messages(
-        DEPENDENCIES
-        std_msgs
-        geometry_msgs
-        sensor_msgs
-        jsk_recognition_msgs
+  DEPENDENCIES
+    geometry_msgs
+    jsk_recognition_msgs
+    sensor_msgs
+    std_msgs
 )
 
 catkin_package(
-        CATKIN_DEPENDS
-        message_runtime
-        std_msgs
-        geometry_msgs
-        sensor_msgs
-        jsk_recognition_msgs
+  CATKIN_DEPENDS
+    geometry_msgs
+    jsk_recognition_msgs
+    message_runtime
+    sensor_msgs
+    std_msgs
 )

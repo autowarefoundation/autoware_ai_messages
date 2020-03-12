@@ -25,6 +25,7 @@ add_message_files(
     DetectedObject.msg
     DetectedObjectArray.msg
     ExtractedPosition.msg
+    Gear.msg
     GeometricRectangle.msg
     ICPStat.msg
     ImageLaneObjects.msg

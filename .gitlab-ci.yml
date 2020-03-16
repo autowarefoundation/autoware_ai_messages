@@ -29,7 +29,7 @@ variables:
 .build_cross: &build_cross_common
   script:
     - apt-get update && apt-get install -y python3-vcstool git build-essential wget
-    - wget https://gitlab.com/autowarefoundation/autoware.ai/autoware/raw/master/ros/cross_toolchain.cmake
+    - wget https://gitlab.com/autowarefoundation/autoware.ai/docker/raw/master/crossbuild/cross_toolchain.cmake
     - source ${AUTOWARE_SYSROOT}/opt/ros/${ROS_DISTRO}/setup.bash
     - colcon build
           --merge-install
@@ -53,7 +53,7 @@ build_melodic_arm:
   <<: *build_common
   only:
     - master
-    
+
 build_melodic_cross:
   image: autoware/build:${AUTOWARE_CROSS_TARGET_PLATFORM}-melodic-bleedingedge
   variables:

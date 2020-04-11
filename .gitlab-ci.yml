@@ -52,7 +52,7 @@ build_melodic_arm:
   image: autoware/arm64v8:bleedingedge-melodic-base
   <<: *build_common
   only:
-    - master
+    - branches@autowarefoundation/autoware.ai/messages
 
 build_melodic_cross:
   image: autoware/build:${AUTOWARE_CROSS_TARGET_PLATFORM}-melodic-bleedingedge
